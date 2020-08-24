@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+	<title>Bubble Sort - Carlos Salazar - Code Chrysalis</title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+	<script src="sketch.js"></script>
+	<script src="Sort.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+
+  <body class="parent">
+	  <!-- Inserts Bubble Background -->
+		<script src="https://cdn.jsdelivr.net/npm/bubbly-bg@0.2.3/dist/bubbly-bg.js"></script>
+		<script>bubbly();</script>
+
+
+    <!-- <div id="title"></div>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Engineering?" />
+	  <input type="submit" />
+	  https://bit.ly/2Vpggxj
+	  https://bit.ly/2VlxATS
+	  https://bit.ly/2Vs81jT
+	  https://icarlospro.com/Projects/Bacefook/BubbleSoundEffect.mp3
+	</form> -->
+	
+  <!-- <div style="visibility:hidden"> -->
+	<audio controls AutoPlay>		
+		<source src="elements/BubbleSoundEffect.mp3" type="audio/mpeg">
+	  </audio>
+  <!-- </div> -->
+
+<div class="bubblePNG" class="child">
+	<img src="elements/BubbleSortFont.png" height="300" width="500" alt="Header-Image">
+</div>
+
+
+<!-- <div class="header">
+	<h1>Bubble Sort Animation</h1>
+	<h3>Carlos Salazar</h3>
+</div> -->
+<!-- 
+    <div class="container">
+      <canvas id="bubble" style="transform: rotate(180deg);" ></canvas> -->
+	 
+	  <div class="MyCanvas" >
+		<canvas id="animationCanvas" width="800" height="600"></canvas>
+     <script>
+        // Set up canvas
+        console.log("TEST THIS IS THE SCRIPT RUNNING!!");
+////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+let arr = [];
+let i = 0;
+let j = 0;
+
+function setup() {
+  createCanvas(800, 600);
+  for(let i = 0; i<width/8; i++){
+    arr.push(random(height));
+  }
+}
+
+function draw() {
+  background(500);
+  Sort();
+  simulateSorting();
+}
+
+function Sort() {
+  for(let k = 0;k<8;k++){
+    if(i<arr.length){
+      let temp = arr[j];
+      if(arr[j] > arr[j+1]){
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+      j++;
+      
+      if(j>=arr.length-i-1){
+        j = 0;
+        i++;
+      }
+    }
+    else{
+      noLoop();
+    }
+  }
+}
+function simulateSorting(){
+  for(let i = 0;i<arr.length;i++){
+	stroke('magenta');
+     //fill(1);
+     rect(i*8 , height, 2, -arr[i],20);
+   }
+}
+////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+</script>
+</div>
+
+
+<div class="buttonContainer">
+<button class="myButton" onClick="window.location.reload();">Sort!</button>
+</div>
+
+
+
+    <!--
+    Where is this public/bundle.js file coming from?
+    It comes from our trusty friend, webpack.
+  -->
+    <script type="text/javascript" src="/public/bundle.js"></script>
+  </body>
+</html>
